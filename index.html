@@ -189,6 +189,12 @@
 		for(var i = 0; i < allPionts.length; i++){
 			allPionts[i].fillColor.hue += 1;
 			allPionts[i].scale(.91);
+			if(allPionts[i].area < 1){
+     			 allPionts[i].remove(); // remove the circle from the canvas
+      			allPionts.splice(i, 1); // remove the circle from the array
+      			i--; // decrement i so that the loop doesn't skip a circle because of .splice()
+
+    		}
 		}	
 		
 	}
